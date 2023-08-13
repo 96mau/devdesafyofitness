@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WaController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EnviarCorreo;
 use App\Http\Controllers\Pesosmasas;
 use App\Http\Livewire\Pesosxcliente;
 
@@ -40,9 +44,50 @@ use App\Http\Livewire\Pesosxcliente;
 |
 */
 
+// rutas de solo website --------------------------------------------------
+
+//Whatsapp
+Route::get('/envia', [WaController::class,'envia']);
+
+Route::get('/ind', function () {
+    return view('website.indexcopi');
+})->name('ind');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('website.index');
+})->name('index');
+
+Route::get('/home', function () {
+    return view('website.index');
 })->name('home');
+
+Route::get('/nosotros', function () {
+    return view('website.nosotros');
+})->name('nosotros');
+Route::get('/servicios', function () {
+    return view('website.servicios');
+})->name('servicios');
+Route::get('/galeria', function () {
+    return view('website.galeria');
+})->name('galeria');
+Route::get('/contactanos', function () {
+    return view('website.contactanos');
+})->name('contactanos');
+
+//emviar correo a contactanos
+route::post('enviar-contactanos', function() {
+    // return request()->all();($name, $email, $phone, $subject, $message)
+    // Mail::to(request()->email)->send(new EnviarCorreo(request()->name,request()->email,request()->phone,request()->subject,request()->message));
+    Mail::to('desafyofitness@gmail.com')->send(new EnviarCorreo(request()->name,request()->email,request()->phone,request()->subject,request()->message));
+    return redirect()->route('contactanos')->with('success', 'Correo Enviado Correctamente');
+})->name('enviar-contactanos');
+
+
+
+// trutas de adminLTE --------------------------------------------------
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -57,6 +102,11 @@ Route::middleware([
     Route::get('/clientes', function () {
         return view('adminLTE.clientesindex');
     })->name('clientes');
+
+    Route::get('/admin', function () {
+        // return view('Panel');
+        return redirect(route('adminLTE.clientesindex'));
+    })->middleware(['auth', 'verified'])->name('admin');
 
 
     // Route::controller(Pesosmasas::class)->group(function () {
