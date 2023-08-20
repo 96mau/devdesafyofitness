@@ -18,7 +18,7 @@ class ShowClientes extends Component
         'Inombre' => 'required|min:3',
         'Iapellido' => 'required|min:3',
         'Itelefono' => 'required|min:10',
-        'Iemail' => 'required|unique:Clientes,email',
+        'Iemail' => 'required|unique:clientes,email',
         'If_nacimiento' => 'required|',
         'Igenero' => 'required',
         'Iestatura' => 'required',
