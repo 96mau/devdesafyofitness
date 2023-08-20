@@ -17,6 +17,21 @@ class SearchClientes extends Component
 
     public $isOpen = false;
 
+
+    protected $rules = [
+        'Inombre' => 'required|min:3',
+        'Iapellido' => 'required|min:3',
+        'Itelefono' => 'required|min:10',
+        'Iemail' => 'required|unique:Clientes,email',
+        'If_nacimiento' => 'required|',
+        'Igenero' => 'required',
+        'Iestatura' => 'required',
+        'Iactivo' => 'required',
+        'Ipago' => 'required',
+        'If_pago' => 'required',
+    ];
+
+
     public function render()
     {
         $clientes = Clientes::all();
@@ -48,6 +63,8 @@ class SearchClientes extends Component
         $this->emit('cerrarModal'); // Emite el evento para cerrar el modal
     }
     public Function UpdateRecord (){
+
+        $this->validate();
 
         $UpClientes= Clientes::find($this->updateId);
         $UpClientes->nombre = $this->Inombre;

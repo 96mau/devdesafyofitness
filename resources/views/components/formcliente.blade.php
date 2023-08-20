@@ -11,7 +11,7 @@
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
                     <input type="text" class="form-control" placeholder="Nombre" id="Inombre" wire:model.lazy="Inombre">
-                    @error('nombre')
+                    @error('Inombre')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
 
@@ -29,7 +29,7 @@
                     </div>
                     <input type="text" class="form-control" placeholder="Apellido"
                         id="apellido" wire:model.lazy="Iapellido">
-                    @error('apellido')
+                    @error('Iapellido')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -44,10 +44,10 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-phone"></i></span>
                     </div>
-                    <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"'
+                    <input type="tel" class="form-control" data-inputmask='"mask": "(999) 999-9999"'
                         id="telefono" wire:model.lazy="Itelefono" data-mask>
 
-                    @error('telefono')
+                    @error('Itelefono')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -66,7 +66,7 @@
                     <input type="email" class="form-control"
                         placeholder="Enter email" id="email" wire:model.lazy="Iemail">
 
-                    @error('email')
+                    @error('Iemail')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -84,7 +84,7 @@
                     <input type="date" class="form-control" data-inputmask-alias="datetime"
                         data-inputmask-inputformat="mm/dd/yyyy" id="f_nacimiento" wire:model.lazy="If_nacimiento" data-mask>
 
-                    @error('f_nacimiento')
+                    @error('If_nacimiento')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -105,7 +105,7 @@
                         <option value="MUJER">Mujer</option>
                     </select>
 
-                    @error('genero')
+                    @error('Igenero')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -119,10 +119,10 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input type="text" class="form-control" data-inputmask='"mask": "99.99"'
+                    <input type="number" class="form-control" data-inputmask='"mask": "99.99"'
                         id="estatura" wire:model.lazy="Iestatura" data-mask>
 
-                    @error('estatura')
+                    @error('Iestatura')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -142,7 +142,7 @@
                         <option value="0">Inactivo</option>
                     </select>
 
-                    @error('activo')
+                    @error('Iactivo')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -163,7 +163,7 @@
                         <option value="VENCIDO">Vencido</option>
                     </select>
 
-                    @error('pago')
+                    @error('Ipago')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -181,7 +181,7 @@
                     <input type="date" class="form-control" data-inputmask-alias="datetime"
                         data-inputmask-inputformat="mm/dd/yyyy" id="f_pago" wire:model.lazy="If_pago" data-mask>
 
-                    @error('f_pago')
+                    @error('If_pago')
                         <span class="text-danger" style="font-size: 11.5px;">{{ $message }}</span>
                     @enderror
                 </div>

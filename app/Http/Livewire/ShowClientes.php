@@ -18,7 +18,7 @@ class ShowClientes extends Component
         'Inombre' => 'required|min:3',
         'Iapellido' => 'required|min:3',
         'Itelefono' => 'required|min:10',
-        'Iemail' => 'required|email',
+        'Iemail' => 'required|unique:Clientes,email',
         'If_nacimiento' => 'required|',
         'Igenero' => 'required',
         'Iestatura' => 'required',
@@ -34,7 +34,8 @@ class ShowClientes extends Component
 
     public function saveContact()
     {
-        $validatedData = $this->validate();
+        // $validatedData = $this->validate();
+        $this->validate();
 
 
         $DatClientes=new Clientes();

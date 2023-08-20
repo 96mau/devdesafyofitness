@@ -34,8 +34,8 @@ class Pesosxcliente extends Component
         $yeards= PYear::find($id);
         $this->yeard_lista= $yeards->Year;
         $this->PMonts = PMonth::where('id_PYeard', '=', $id)
-                        ->orderByDesc('mes')
-                        ->orderByDesc('created_at')
+                        ->orderBy('mes', 'asc')
+                        ->orderBy('created_at', 'asc')
                         ->get();
 
     }

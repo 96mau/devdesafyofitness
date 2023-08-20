@@ -205,27 +205,27 @@
                                                 $elmes = '';
                                                 if ($Mon->mes == 1) {
                                                     $elmes = 'Enero';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 2) {
                                                     $elmes = 'Febrero';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 3) {
                                                     $elmes = 'Marzo';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 4) {
                                                     $elmes = 'Abril';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 5) {
                                                     $elmes = 'Mayo';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 6) {
                                                     $elmes = 'Junio';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 7) {
                                                     $elmes = 'Julio';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 8) {
                                                     $elmes = 'Agosto';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 9) {
                                                     $elmes = 'Septiembre';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 10) {
                                                     $elmes = 'Octubre';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 11) {
                                                     $elmes = 'Noviembre';
-                                                } elseif ($Mon->mes == 1) {
+                                                } elseif ($Mon->mes == 12) {
                                                     $elmes = 'Diciembre';
                                                 }
                                             @endphp
